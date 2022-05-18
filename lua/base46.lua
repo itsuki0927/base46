@@ -1,7 +1,7 @@
 local M = {}
 
 M.get_colors = function(type)
-   local name = vim.g.nvchad_theme
+   local name = vim.g.skcode_theme
 
    -- theme paths
    local default_path = "hl_themes." .. name
@@ -45,7 +45,7 @@ M.load_theme = function()
 end
 
 M.override_theme = function(default_theme, theme_name)
-   local changed_themes = nvchad.load_config().ui.changed_themes
+   local changed_themes = skcode.load_config().ui.changed_themes
 
    if changed_themes[theme_name] then
       return M.merge_tb(default_theme, changed_themes[theme_name])
@@ -55,7 +55,7 @@ M.override_theme = function(default_theme, theme_name)
 end
 
 M.toggle_theme = function()
-   local themes = nvchad.load_config().ui.theme_toggle
+   local themes = skcode.load_config().ui.theme_toggle
 
    local theme1 = themes[1]
    local theme2 = themes[2]
@@ -66,13 +66,13 @@ M.toggle_theme = function()
       vim.g.toggle_theme_icon = "   "
    end
 
-   if vim.g.nvchad_theme == theme1 then
-      vim.g.nvchad_theme = theme2
+   if vim.g.skcode_theme == theme1 then
+      vim.g.skcode_theme = theme2
 
       require("nvchad").reload_theme()
       require("nvchad").change_theme(theme1, theme2)
-   elseif vim.g.nvchad_theme == theme2 then
-      vim.g.nvchad_theme = theme1
+   elseif vim.g.skcode_theme == theme2 then
+      vim.g.skcode_theme = theme1
 
       require("nvchad").reload_theme()
       require("nvchad").change_theme(theme2, theme1)

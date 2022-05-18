@@ -1,4 +1,4 @@
-local ui = nvchad.load_config().ui
+local ui = skcode.load_config().ui
 
 local merge_tb = require("base46").merge_tb
 
