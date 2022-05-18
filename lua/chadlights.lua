@@ -26,32 +26,11 @@ if polish_hl then
    highlights = merge_tb(highlights, polish_hl)
 end
 
--- override user highlights if there are any
-if ui.hl_override then
-   local user_highlights = ui.hl_override
-   local colors = require("base46").get_colors "base_30"
-
-   -- fg = "white" set by user becomes fg = colors["white"]
-   -- so no need for the user to import colors
-
-   for group, _ in pairs(user_highlights) do
-      for key, color in pairs(user_highlights[group]) do
-         if key == "fg" or key == "bg" then
-            if color:sub(1, 1) == "#" then
-               user_highlights[group][key] = color
-            else
-               user_highlights[group][key] = colors[color]
-            end
-         end
-      end
-   end
-
-   highlights = merge_tb(highlights, user_highlights)
-end
-
 -- local set_transparent = nvchad.load_config().ui.transparency
-if ui.transparency then
+if ui.float_style == "transparency" then
    highlights = merge_tb(highlights, require "nv_glassy")
+elseif ui.float_style == "border" then
+   highlights = merge_tb(highlights, require "sk_border")
 end
 
 -- finally set all highlights :D
