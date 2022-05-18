@@ -3,17 +3,13 @@ local M = {}
 M.get_colors = function(type)
    local name = vim.g.skcode_theme
 
-   -- theme paths
+   -- -- theme paths
    local default_path = "hl_themes." .. name
-   local user_path = "custom.themes." .. name
 
    local present1, default_theme = pcall(require, default_path)
-   local present2, user_theme = pcall(require, user_path)
 
    if present1 then
       return default_theme[type]
-   elseif present2 then
-      return user_theme[type]
    else
       error "No such theme bruh >_< "
    end
@@ -45,40 +41,7 @@ M.load_theme = function()
 end
 
 M.override_theme = function(default_theme, theme_name)
-   local changed_themes = skcode.load_config().ui.changed_themes
-
-   if changed_themes[theme_name] then
-      return M.merge_tb(default_theme, changed_themes[theme_name])
-   else
-      return default_theme
-   end
-end
-
-M.toggle_theme = function()
-   local themes = skcode.load_config().ui.theme_toggle
-
-   local theme1 = themes[1]
-   local theme2 = themes[2]
-
-   if vim.g.toggle_theme_icon == "   " then
-      vim.g.toggle_theme_icon = "   "
-   else
-      vim.g.toggle_theme_icon = "   "
-   end
-
-   if vim.g.skcode_theme == theme1 then
-      vim.g.skcode_theme = theme2
-
-      require("nvchad").reload_theme()
-      require("nvchad").change_theme(theme1, theme2)
-   elseif vim.g.skcode_theme == theme2 then
-      vim.g.skcode_theme = theme1
-
-      require("nvchad").reload_theme()
-      require("nvchad").change_theme(theme2, theme1)
-   else
-      vim.notify "Set your current theme to one of those mentioned in the theme_toggle table (chadrc)"
-   end
+   return default_theme
 end
 
 return M
