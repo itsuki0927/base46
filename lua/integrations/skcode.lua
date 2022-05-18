@@ -22,7 +22,7 @@ return {
 
    Comment = { fg = grey_fg },
 
-   Folded = { bg = one_bg2 },
+   Folded = { bg = line },
 
    -- line numbers
    CursorLineNr = { fg = white },
