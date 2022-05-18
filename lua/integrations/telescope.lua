@@ -36,7 +36,7 @@ return {
 
    TelescopeResultsTitle = {
       fg = colors.darker_black,
-      bg = colors.darker_black,
+      bg = colors.yellow,
    },
 
    TelescopeSelection = { bg = colors.one_bg, fg = colors.white },
