@@ -22,6 +22,8 @@ return {
 
    Comment = { fg = grey_fg },
 
+   Folded = { bg = one_bg2 },
+
    -- line numbers
    CursorLineNr = { fg = white },
    LineNr = { fg = grey },
@@ -30,7 +32,8 @@ return {
    EndOfBuffer = { fg = black },
 
    -- floating windows
-   FloatBorder = { fg = blue },
+   -- FloatBorder = { fg = blue },
+   FloatBorder = { bg = darker_black, fg = darker_black },
    NormalFloat = { bg = darker_black },
 
    -- Pmenu i.e completion menu
@@ -50,27 +53,21 @@ return {
    DiffAdd = {
       fg = blue,
    },
-
    DiffAdded = {
       fg = green,
    },
-
    DiffChange = {
       fg = light_grey,
    },
-
    DiffChangeDelete = {
       fg = red,
    },
-
    DiffModified = {
       fg = orange,
    },
-
    DiffDelete = {
       fg = red,
    },
-
    DiffRemoved = {
       fg = red,
    },
@@ -79,6 +76,10 @@ return {
    IndentBlanklineChar = { fg = line },
    IndentBlanklineSpaceChar = { fg = line },
 
+   -- Lsp text hover
+   LspReferenceRead = { bg = grey },
+   LspReferenceText = { bg = grey },
+   LspReferenceWrite = { bg = grey },
    -- Lsp Diagnostics
    DiagnosticHint = { fg = purple },
    DiagnosticError = { fg = red },
@@ -92,6 +93,25 @@ return {
    WhichKeyGroup = { fg = green },
    WhichKeyValue = { fg = green },
 
+   -- floaterm
+   Floaterm = {
+      bg = darker_black,
+   },
+   FloatermBorder = {
+      fg = darker_black,
+      bg = darker_black,
+   },
+
+   -- renamer
+   RenamerNormal = {
+      bg = darker_black,
+   },
+   RenamerTitle = {
+      fg = black,
+      bg = blue,
+   },
+   RenamerBorder = { fg = darker_black, bg = darker_black },
+
    -- packer
    packerPackageName = { fg = red },
 
@@ -102,6 +122,6 @@ return {
    },
    MatchParen = { link = "MatchWord" },
 
-   MatchWordCur = { },
+   MatchWordCur = {},
    MatchParenCur = { link = "MatchWordCur" },
 }
