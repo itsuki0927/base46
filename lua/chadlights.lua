@@ -3,6 +3,7 @@ local ui = skcode.load_config().ui
 local merge_tb = require("base46").merge_tb
 
 local highlights = {}
+-- local hl_dir = vim.fn.stdpath "data" .. "/site/pack/packer/opt/base46/lua/integrations"
 local hl_dir = vim.fn.stdpath "data" .. "/site/pack/packer/opt/base46/lua/integrations"
 
 -- push hl_dir file names to table
@@ -15,9 +16,6 @@ for _, file in ipairs(hl_files) do
    local integration = require("integrations." .. a)
    highlights = merge_tb(highlights, integration)
 end
-
--- term colors
-require "term_hl"
 
 -- polish theme specific highlights
 local polish_hl = require("base46").get_colors "polish_hl"

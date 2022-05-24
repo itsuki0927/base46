@@ -1,9 +1,6 @@
 local M = {}
 
-M.get_colors = function(type)
-   local name = vim.g.skcode_theme
-
-   -- -- theme paths
+M.get_theme_tb = function(name, type)
    local default_path = "hl_themes." .. name
 
    local present1, default_theme = pcall(require, default_path)
@@ -15,11 +12,20 @@ M.get_colors = function(type)
    end
 end
 
+M.get_colors = function(type)
+   local name = vim.g.skcode_theme
+   return M.get_theme_tb(name, type)
+end
+
 M.merge_tb = function(table1, table2)
    return vim.tbl_deep_extend("force", table1, table2)
 end
 
 M.load_theme = function()
+   -- set bg option
+   local theme_type = M.get_theme_tb(vim.g.skcode_theme, "type") -- dark/light
+   vim.opt.bg = theme_type
+
    -- clear highlights of bufferline (cuz of dynamic devicons hl group on the buffer)
    local highlights_raw = vim.split(vim.api.nvim_exec("filter BufferLine hi", true), "\n")
    local highlight_groups = {}

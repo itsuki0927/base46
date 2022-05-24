@@ -5,13 +5,13 @@ M.base_30 = {
    darker_black = "#272f35",
    black = "#2b3339", --  nvim bg
    black2 = "#323a40",
-   one_bg = "#333b41",
+   one_bg = "#363e44",
    one_bg2 = "#363e44",
    one_bg3 = "#3a4248",
-   grey = "#4a5258",
-   grey_fg = "#50585e",
-   grey_fg2 = "#5e666c",
-   light_grey = "#61696f",
+   grey = "#4e565c",
+   grey_fg = "#545c62",
+   grey_fg2 = "#626a70",
+   light_grey = "#656d73",
    red = "#e67e80",
    baby_pink = "#ce8196",
    pink = "#ff75a0",
@@ -52,6 +52,8 @@ M.base_16 = {
    base0E = "#e67e80",
    base0F = "#e67e80",
 }
+
+M.type = "dark"
 
 M.polish_hl = {
    TSPunctBracket = {

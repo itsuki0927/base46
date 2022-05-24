@@ -11,7 +11,6 @@ return {
    BufferLineBufferSelected = {
       fg = colors.white,
       bg = colors.black,
-      bold = true,
    },
 
    BufferLineBufferVisible = {
@@ -91,10 +90,6 @@ return {
    BufferLineTabClose = {
       fg = colors.red,
       bg = colors.black,
-   },
-
-   BufferLineDevIconDefaultInactive = {
-      bg = "NONE",
    },
 
    BufferLineDevIconDefaultSelected = {
