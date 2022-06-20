@@ -1,18 +1,18 @@
 local M = {}
 local g = vim.g
-local config = require("core.utils").load_config()
 
 M.get_theme_tb = function(type)
-   local default_path = "base46.themes." .. g.nvchad_theme
-   local user_path = "custom.themes." .. g.nvchad_theme
+   local theme = g.skcode_theme
+   if theme == nil then
+      theme = "onedark"
+   end
+
+   local default_path = "base46.themes." .. theme
 
    local present1, default_theme = pcall(require, default_path)
-   local present2, user_theme = pcall(require, user_path)
 
    if present1 then
       return default_theme[type]
-   elseif present2 then
-      return user_theme[type]
    else
       error "No such theme bruh >_< "
    end
@@ -94,14 +94,6 @@ M.extend_default_hl = function(highlights)
          end
       end
    end
-
-   local overriden_hl = M.turn_str_to_color(config.ui.hl_override)
-
-   for key, value in pairs(overriden_hl) do
-      if highlights[key] then
-         highlights[key] = M.merge_tb(highlights[key], value)
-      end
-   end
 end
 
 M.load_highlight = function(group)
@@ -122,68 +114,15 @@ M.load_theme = function()
 
    M.load_highlight "defaults"
    M.load_highlight "statusline"
-   M.load_highlight(M.turn_str_to_color(config.ui.hl_add))
+   -- M.load_highlight(M.turn_str_to_color(config.ui.hl_add))
 end
 
 M.override_theme = function(default_theme, theme_name)
-   local changed_themes = config.ui.changed_themes
-
-   if changed_themes[theme_name] then
-      return M.merge_tb(default_theme, changed_themes[theme_name])
-   else
-      return default_theme
-   end
+   return default_theme
 end
 
-M.toggle_theme = function()
-   local themes = config.ui.theme_toggle
+M.toggle_theme = function() end
 
-   local theme1 = themes[1]
-   local theme2 = themes[2]
-
-   if g.nvchad_theme == theme1 or g.nvchad_theme == theme2 then
-      if g.toggle_theme_icon == "   " then
-         g.toggle_theme_icon = "   "
-      else
-         g.toggle_theme_icon = "   "
-      end
-   end
-
-   if g.nvchad_theme == theme1 then
-      g.nvchad_theme = theme2
-
-      require("nvchad").reload_theme()
-      require("nvchad").change_theme(theme1, theme2)
-   elseif g.nvchad_theme == theme2 then
-      g.nvchad_theme = theme1
-
-      require("nvchad").reload_theme()
-      require("nvchad").change_theme(theme2, theme1)
-   else
-      vim.notify "Set your current theme to one of those mentioned in the theme_toggle table (chadrc)"
-   end
-end
-
-M.toggle_transparency = function()
-   local transparency_status = config.ui.transparency
-   local write_data = require("nvchad").write_data
-
-   local function save_chadrc_data()
-      local old_data = "transparency = " .. tostring(transparency_status)
-      local new_data = "transparency = " .. tostring(g.transparency)
-
-      write_data(old_data, new_data)
-   end
-
-   if g.transparency then
-      g.transparency = false
-      M.load_all_highlights()
-      save_chadrc_data()
-   else
-      g.transparency = true
-      M.load_all_highlights()
-      save_chadrc_data()
-   end
-end
+M.toggle_transparency = function() end
 
 return M
