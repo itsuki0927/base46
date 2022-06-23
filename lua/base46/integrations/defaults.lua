@@ -19,6 +19,8 @@ return {
    CursorLineNr = { fg = colors.white },
    LineNr = { fg = colors.grey },
 
+   EndOfBuffer = { fg = colors.black },
+
    -- floating windows
    FloatBorder = { fg = colors.blue },
    NormalFloat = { bg = colors.darker_black },
