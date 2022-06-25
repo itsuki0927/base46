@@ -3,6 +3,34 @@ local colors = require("base46").get_theme_tb "base_30"
 
 return {
 
+   DiffAdd = {
+      fg = colors.blue,
+   },
+
+   DiffAdded = {
+      fg = colors.green,
+   },
+
+   DiffChange = {
+      fg = colors.light_grey,
+   },
+
+   DiffChangeDelete = {
+      fg = colors.red,
+   },
+
+   DiffModified = {
+      fg = colors.orange,
+   },
+
+   DiffDelete = {
+      fg = colors.red,
+   },
+
+   DiffRemoved = {
+      fg = colors.red,
+   },
+
    -- git commits
    gitcommitOverflow = {
       fg = theme.base08,
@@ -66,34 +94,5 @@ return {
    gitcommitSelectedFile = {
       fg = theme.base0B,
       bold = true,
-   },
-
-   -- Gitsigns.nvim
-   DiffAdd = {
-      fg = colors.blue,
-   },
-
-   DiffAdded = {
-      fg = colors.green,
-   },
-
-   DiffChange = {
-      fg = colors.light_grey,
-   },
-
-   DiffChangeDelete = {
-      fg = colors.red,
-   },
-
-   DiffModified = {
-      fg = colors.orange,
-   },
-
-   DiffDelete = {
-      fg = colors.red,
-   },
-
-   DiffRemoved = {
-      fg = colors.red,
    },
 }
