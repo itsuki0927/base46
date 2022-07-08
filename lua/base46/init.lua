@@ -3,6 +3,7 @@ local g = vim.g
 
 M.get_theme_tb = function(type)
    local theme = g.skcode_theme
+   -- 默认主题: onedark
    if theme == nil then
       theme = "onedark"
    end
