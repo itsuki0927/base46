@@ -11,7 +11,7 @@ M.base_30 = {
    grey = "#33363c",
    grey_fg = "#3d4046",
    grey_fg2 = "#46494f",
-   light_grey = "#4e5157",
+   light_grey = "#54575d",
    red = "#F07178",
    baby_pink = "#ff949b",
    pink = "#ff8087",
@@ -53,30 +53,12 @@ M.base_16 = {
 }
 
 M.polish_hl = {
-
-   TSTagDelimiter = {
-      fg = M.base_30.cyan,
-   },
-
-   TSFunction = {
-      fg = M.base_30.orange,
-   },
-
-   luaTSField = {
-      fg = M.base_16.base0D,
-   },
-
-   TSParameter = {
-      fg = M.base_16.base0F,
-   },
-
-   TSConstructor = {
-      fg = M.base_16.base0A,
-   },
-
-   TSTagAttribute = {
-      fg = M.base_30.orange,
-   },
+   TSTagDelimiter = { fg = M.base_30.cyan },
+   TSFunction = { fg = M.base_30.orange },
+   luaTSField = { fg = M.base_16.base0D },
+   TSParameter = { fg = M.base_16.base0F },
+   TSConstructor = { fg = M.base_16.base0A },
+   TSTagAttribute = { fg = M.base_30.orange },
 }
 
 M = require("base46").override_theme(M, "ayu-dark")
