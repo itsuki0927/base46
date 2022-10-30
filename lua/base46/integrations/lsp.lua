@@ -6,13 +6,13 @@ return {
    LspReferenceRead = { bg = colors.grey },
    LspReferenceWrite = { bg = colors.grey },
 
-   -- Lsp Diagnostics
-   DiagnosticHint = { fg = colors.purple },
-   DiagnosticError = { fg = colors.red },
-   DiagnosticWarn = { fg = colors.yellow },
-   DiagnosticInformation = { fg = colors.green },
-   LspSignatureActiveParameter = { fg = colors.black, bg = colors.green },
+  -- Lsp Diagnostics
+  DiagnosticHint = { fg = colors.purple },
+  DiagnosticError = { fg = colors.red },
+  DiagnosticWarn = { fg = colors.yellow },
+  DiagnosticInformation = { fg = colors.green },
+  LspSignatureActiveParameter = { fg = colors.black, bg = colors.green },
 
-   RenamerTitle = { fg = colors.black, bg = colors.red },
-   RenamerBorder = { fg = colors.red },
+  RenamerTitle = { fg = colors.black, bg = colors.red },
+  RenamerBorder = { fg = colors.red },
 }

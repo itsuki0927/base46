@@ -1,192 +1,198 @@
 local theme = require("base46").get_theme_tb "base_16"
 
 return {
-   TSAnnotation = {
-      fg = theme.base0F,
-   },
+  -- `@annotation` is not one of the default capture group, should we keep it
+  ["@annotation"] = {
+    fg = theme.base0F,
+  },
 
-   TSAttribute = {
-      fg = theme.base0A,
-   },
+  ["@attribute"] = {
+    fg = theme.base0A,
+  },
 
-   TSTagAttribute = {
-      link = "TSProperty",
-   },
+  ["@character"] = {
+    fg = theme.base08,
+  },
 
-   TSCharacter = {
-      fg = theme.base08,
-   },
+  ["@constructor"] = {
+    fg = theme.base0C,
+  },
 
-   TSConstructor = {
-      fg = theme.base0C,
-   },
+  ["@constant.builtin"] = {
+    fg = theme.base09,
+  },
 
-   TSConstBuiltin = {
-      fg = theme.base09,
-   },
+  ["@constant.macro"] = {
+    fg = theme.base08,
+  },
 
-   TSConstMacro = {
-      fg = theme.base08,
-   },
+  ["@error"] = {
+    fg = theme.base08,
+  },
 
-   TSError = {
-      fg = theme.base08,
-   },
+  ["@exception"] = {
+    fg = theme.base08,
+  },
 
-   TSException = {
-      fg = theme.base08,
-   },
+  ["@float"] = {
+    fg = theme.base09,
+  },
 
-   TSFloat = {
-      fg = theme.base09,
-   },
+  ["@keyword"] = {
+    fg = theme.base0E,
+  },
 
-   TSKeyword = {
-      fg = theme.base0E,
-   },
+  ["@keyword.function"] = {
+    fg = theme.base0E,
+  },
 
-   TSKeywordFunction = {
-      fg = theme.base0E,
-   },
+  ["@keyword.return"] = {
+    fg = theme.base0E,
+  },
 
-   TSKeywordReturn = {
-      fg = theme.base0E,
-   },
+  ["@function"] = {
+    fg = theme.base0D,
+  },
 
-   TSFunction = {
-      fg = theme.base0D,
-   },
+  ["@function.builtin"] = {
+    fg = theme.base0D,
+  },
 
-   TSFuncBuiltin = {
-      fg = theme.base0D,
-   },
+  ["@function.macro"] = {
+    fg = theme.base08,
+  },
 
-   TSFuncMacro = {
-      fg = theme.base08,
-   },
+  ["@keyword.operator"] = {
+    fg = theme.base0E,
+  },
 
-   TSKeywordOperator = {
-      fg = theme.base0E,
-   },
+  ["@method"] = {
+    fg = theme.base0D,
+  },
 
-   TSMethod = {
-      fg = theme.base0D,
-   },
+  ["@namespace"] = {
+    fg = theme.base08,
+  },
 
-   TSNamespace = {
-      fg = theme.base08,
-   },
+  ["@none"] = {
+    fg = theme.base05,
+  },
 
-   TSNone = {
-      fg = theme.base05,
-   },
+  ["@parameter"] = {
+    fg = theme.base08,
+  },
 
-   TSParameter = {
-      fg = theme.base08,
-   },
+  ["@reference"] = {
+    fg = theme.base05,
+  },
 
-   TSParameterReference = {
-      fg = theme.base05,
-   },
+  ["@punctuation.bracket"] = {
+    fg = theme.base0F,
+  },
 
-   TSPunctBracket = {
-      fg = theme.base0F,
-   },
+  ["@punctuation.delimiter"] = {
+    fg = theme.base0F,
+  },
 
-   TSPunctDelimiter = {
-      fg = theme.base0F,
-   },
+  ["@punctuation.special"] = {
+    fg = theme.base08,
+  },
 
-   TSPunctSpecial = {
-      fg = theme.base08,
-   },
+  ["@string.regex"] = {
+    fg = theme.base0C,
+  },
 
-   TSStringRegex = {
-      fg = theme.base0C,
-   },
+  ["@string.escape"] = {
+    fg = theme.base0C,
+  },
 
-   TSStringEscape = {
-      fg = theme.base0C,
-   },
+  ["@symbol"] = {
+    fg = theme.base0B,
+  },
 
-   TSSymbol = {
-      fg = theme.base0B,
-   },
+  ["@tag"] = {
+    link = "Tag",
+  },
 
-   TSTagDelimiter = {
-      fg = theme.base0F,
-   },
+  ["@tag.attribute"] = {
+    link = "@property",
+  },
 
-   TSText = {
-      fg = theme.base05,
-   },
+  ["@tag.delimiter"] = {
+    fg = theme.base0F,
+  },
 
-   TSStrong = {
-      bold = true,
-   },
+  ["@text"] = {
+    fg = theme.base05,
+  },
 
-   TSEmphasis = {
-      fg = theme.base09,
-   },
+  ["@text.strong"] = {
+    bold = true,
+  },
 
-   TSStrike = {
-      fg = theme.base00,
-      strikethrough = true,
-   },
+  ["@text.emphasis"] = {
+    fg = theme.base09,
+  },
 
-   TSLiteral = {
-      fg = theme.base09,
-   },
+  ["@text.strike"] = {
+    fg = theme.base00,
+    strikethrough = true,
+  },
 
-   TSURI = {
-      fg = theme.base09,
+  ["@text.literal"] = {
+    fg = theme.base09,
+  },
 
-      underline = true,
-   },
+  ["@text.uri"] = {
+    fg = theme.base09,
+    underline = true,
+  },
 
-   TSTypeBuiltin = {
-      fg = theme.base0A,
-   },
+  ["@type.builtin"] = {
+    fg = theme.base0A,
+  },
 
-   TSVariableBuiltin = {
-      fg = theme.base09,
-   },
+  ["@variable"] = {
+    fg = theme.base05,
+  },
 
-   TSVariable = {
-      fg = theme.base05,
-   },
+  ["@variable.builtin"] = {
+    fg = theme.base09,
+  },
 
-   TSDefinition = {
-      sp = theme.base04,
-      underline = true,
-   },
+  -- variable.global
 
-   TSDefinitionUsage = {
-      sp = theme.base04,
-      underline = true,
-   },
+  ["@definition"] = {
+    sp = theme.base04,
+    underline = true,
+  },
 
-   TSCurrentScope = {
-      bold = true,
-   },
+  TSDefinitionUsage = {
+    sp = theme.base04,
+    underline = true,
+  },
 
-   luaTSField = {
-      fg = theme.base0D,
-   },
+  ["@scope"] = {
+    bold = true,
+  },
 
-   TSFieldKey = {
-      fg = theme.base08,
-   },
+  ["@field"] = {
+    fg = theme.base08,
+  },
 
-   TSProperty = {
-      fg = theme.base08,
-   },
+  ["@field.key"] = {
+    fg = theme.base0D,
+  },
 
-   TSInclude = {
-      link = "Include",
-   },
+  ["@property"] = {
+    fg = theme.base08,
+  },
 
-   TSConditional = {
-      link = "Conditional",
-   },
+  ["@include"] = {
+    link = "Include",
+  },
+
+  ["@conditional"] = {
+    link = "Conditional",
+  },
 }

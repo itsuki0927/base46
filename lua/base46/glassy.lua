@@ -64,9 +64,9 @@ local hl_groups = {
 }
 
 for _, groups in ipairs(hl_groups) do
-   M[groups] = {
-      bg = "NONE",
-   }
+  M[groups] = {
+    bg = "NONE",
+  }
 end
 
 return M
