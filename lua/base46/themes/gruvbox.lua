@@ -1,3 +1,6 @@
+-- credits to original theme for existing https://github.com/morhetz/gruvbox
+-- This is a modified version of it
+
 local M = {}
 
 M.base_30 = {
@@ -50,6 +53,22 @@ M.base_16 = {
   base0D = "#83a598",
   base0E = "#d3869b",
   base0F = "#d65d0e",
+}
+
+M.polish_hl = {
+  ["@keyword.function"] = {
+    fg = M.base_16.base0C,
+    bold = true,
+  },
+
+  ["@field.key"] = {
+    fg = M.base_16.base05,
+  },
+
+  Include = {
+    fg = M.base_16.base0C,
+    bold = true,
+  },
 }
 
 vim.opt.bg = "dark"
