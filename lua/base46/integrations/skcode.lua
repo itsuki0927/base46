@@ -1,4 +1,4 @@
-local colors = require("base46").get_colors "base_30"
+local colors = require("base46").get_colors("base_30")
 
 local black = colors.black
 local blue = colors.blue
@@ -19,109 +19,99 @@ local orange = colors.orange
 -- highlight groups & colors
 return {
 
-   Comment = { fg = grey_fg },
+  Comment = { fg = grey_fg },
 
-   Folded = { bg = line },
+  Folded = { bg = line },
 
-   -- line numbers
-   CursorLineNr = { fg = white },
-   LineNr = { fg = grey },
+  -- line numbers
+  CursorLineNr = { fg = white },
+  LineNr = { fg = grey },
 
-   -- those ugly ~'s
-   EndOfBuffer = { fg = black },
+  -- those ugly ~'s
+  EndOfBuffer = { fg = black },
 
-   -- floating windows
-   -- FloatBorder = { fg = blue },
-   FloatBorder = { bg = darker_black, fg = darker_black },
-   NormalFloat = { bg = darker_black },
+  -- floating windows
+  -- FloatBorder = { fg = blue },
+  FloatBorder = { bg = darker_black, fg = darker_black },
+  NormalFloat = { bg = darker_black },
 
-   -- Pmenu i.e completion menu
-   Pmenu = { bg = black },
-   PmenuSbar = { bg = one_bg },
-   PmenuSel = { bg = pmenu_bg, fg = black },
-   PmenuThumb = { bg = grey },
+  -- Pmenu i.e completion menu
+  Pmenu = { bg = black },
+  PmenuSbar = { bg = one_bg },
+  PmenuSel = { bg = pmenu_bg, fg = black },
+  PmenuThumb = { bg = grey },
 
-   NvimInternalError = { fg = red },
-   WinSeparator = { fg = line },
+  NvimInternalError = { fg = red },
+  WinSeparator = { fg = line },
 
-   -- Dashboard i.e alpha.nvim
-   AlphaHeader = { fg = grey_fg },
-   AlphaButtons = { fg = light_grey },
+  -- Dashboard i.e alpha.nvim
+  AlphaHeader = { fg = grey_fg },
+  AlphaButtons = { fg = light_grey },
 
-   -- Gitsigns.nvim
-   DiffAdd = {
-      fg = blue,
-   },
-   DiffAdded = {
-      fg = green,
-   },
-   DiffChange = {
-      fg = light_grey,
-   },
-   DiffChangeDelete = {
-      fg = red,
-   },
-   DiffModified = {
-      fg = orange,
-   },
-   DiffDelete = {
-      fg = red,
-   },
-   DiffRemoved = {
-      fg = red,
-   },
+  -- Gitsigns.nvim
+  DiffAdd = {
+    fg = blue,
+  },
+  DiffAdded = {
+    fg = green,
+  },
+  DiffChange = {
+    fg = light_grey,
+  },
+  DiffChangeDelete = {
+    fg = red,
+  },
+  DiffModified = {
+    fg = orange,
+  },
+  DiffDelete = {
+    fg = red,
+  },
+  DiffRemoved = {
+    fg = red,
+  },
 
-   -- Indent blankline
-   IndentBlanklineChar = { fg = line },
-   IndentBlanklineSpaceChar = { fg = line },
+  -- Indent blankline
+  IndentBlanklineChar = { fg = line },
+  IndentBlanklineSpaceChar = { fg = line },
 
-   -- LSP References
-   LspReferenceRead = { bg = grey },
-   LspReferenceText = { bg = grey },
-   LspReferenceWrite = { bg = grey },
+  -- LSP References
+  LspReferenceRead = { bg = grey },
+  LspReferenceText = { bg = grey },
+  LspReferenceWrite = { bg = grey },
 
-   -- Lsp Diagnostics
-   DiagnosticHint = { fg = purple },
-   DiagnosticError = { fg = red },
-   DiagnosticWarn = { fg = yellow },
-   DiagnosticInformation = { fg = green },
+  -- Lsp Diagnostics
+  DiagnosticHint = { fg = purple },
+  DiagnosticError = { fg = red },
+  DiagnosticWarn = { fg = yellow },
+  DiagnosticInformation = { fg = green },
 
-   -- whichkey
-   WhichKey = { fg = blue },
-   WhichKeySeparator = { fg = light_grey },
-   WhichKeyDesc = { fg = red },
-   WhichKeyGroup = { fg = green },
-   WhichKeyValue = { fg = green },
+  -- whichkey
+  WhichKey = { fg = blue },
+  WhichKeySeparator = { fg = light_grey },
+  WhichKeyDesc = { fg = red },
+  WhichKeyGroup = { fg = green },
+  WhichKeyValue = { fg = green },
 
-   -- floaterm
-   Floaterm = {
-      bg = darker_black,
-   },
-   FloatermBorder = {
-      fg = darker_black,
-      bg = darker_black,
-   },
+  -- floaterm
+  Floaterm = {
+    bg = darker_black,
+  },
+  FloatermBorder = {
+    fg = darker_black,
+    bg = darker_black,
+  },
 
-   -- renamer
-   RenamerNormal = {
-      bg = darker_black,
-   },
-   RenamerTitle = {
-      fg = black,
-      bg = blue,
-   },
-   RenamerBorder = { fg = darker_black, bg = darker_black },
+  -- packer
+  packerPackageName = { fg = red },
 
-   -- packer
-   packerPackageName = { fg = red },
+  -- vim-matchup
+  MatchWord = {
+    fg = black,
+    bg = white,
+  },
+  MatchParen = { link = "MatchWord" },
 
-   -- vim-matchup
-   MatchWord = {
-      fg = black,
-      bg = white,
-   },
-   MatchParen = { link = "MatchWord" },
-
-   MatchWordCur = {},
-   MatchParenCur = { link = "MatchWordCur" },
+  MatchWordCur = {},
+  MatchParenCur = { link = "MatchWordCur" },
 }
