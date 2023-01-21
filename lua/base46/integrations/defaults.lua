@@ -1,5 +1,5 @@
-local colors = require("base46").get_theme_tb "base_30"
-local theme = require("base46").get_theme_tb "base_16"
+local colors = require("base46").get_theme_tb("base_30")
+local theme = require("base46").get_theme_tb("base_16")
 
 return {
   MatchWord = {
@@ -18,12 +18,13 @@ return {
 
   CursorLineNr = { fg = colors.white },
   LineNr = { fg = colors.grey },
+  Cursor = { bg = theme.base00 },
 
-   EndOfBuffer = { fg = colors.black },
+  EndOfBuffer = { fg = colors.black },
 
-   -- floating windows
-   FloatBorder = { fg = colors.blue },
-   NormalFloat = { bg = colors.darker_black },
+  -- floating windows
+  FloatBorder = { fg = colors.blue },
+  NormalFloat = { bg = colors.darker_black },
 
   NvimInternalError = { fg = colors.red },
   WinSeparator = { fg = colors.line },
@@ -153,11 +154,6 @@ return {
     bg = "NONE",
   },
 
-  Cursor = {
-    fg = theme.base00,
-    bg = theme.base05,
-  },
-
   NonText = {
     fg = theme.base03,
   },
@@ -178,8 +174,9 @@ return {
   },
 
   CursorLine = {
-    bg = "none",
-    sp = "none",
+    bg = theme.base01,
+    sp = theme.base02,
+    -- sp = "none",
   },
 
   QuickFixLine = {
