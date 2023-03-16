@@ -1,7 +1,9 @@
 local colors = require("base46").get_theme_tb("base_30")
 local theme = require("base46").get_theme_tb("base_16")
 
-return {
+local generate_color = require("base46.colors").change_hex_lightness
+
+local defaults = {
   MatchWord = {
     bg = colors.grey,
     fg = colors.white,
@@ -28,16 +30,6 @@ return {
 
   NvimInternalError = { fg = colors.red },
   WinSeparator = { fg = colors.line },
-
-  -- packer
-  PackerPackageName = { fg = colors.red },
-  PackerSuccess = { fg = colors.green },
-  PackerStatusSuccess = { fg = theme.base08 },
-  PackerStatusCommit = { fg = colors.blue },
-  PackeProgress = { fg = colors.blue },
-  PackerOutput = { fg = colors.red },
-  PackerStatus = { fg = colors.blue },
-  PackerHash = { fg = colors.blue },
 
   Normal = {
     fg = theme.base05,
@@ -209,4 +201,50 @@ return {
     bg = colors.green,
     fg = colors.black,
   },
+
+  -- lazy.nvim
+  LazyH1 = {
+    bg = colors.green,
+    fg = colors.black,
+  },
+
+  LazyButton = {
+    bg = colors.one_bg,
+    fg = generate_color(colors.light_grey, vim.o.bg == "dark" and 10 or -20),
+  },
+
+  LazyH2 = {
+    fg = colors.red,
+    bold = true,
+    underline = true,
+  },
+
+  LazyReasonPlugin = { fg = colors.red },
+  LazyValue = { fg = colors.teal },
+  LazyDir = { fg = theme.base05 },
+  LazyUrl = { fg = theme.base05 },
+  LazyCommit = { fg = colors.green },
+  LazyNoCond = { fg = colors.red },
+  LazySpecial = { fg = colors.blue },
+  LazyReasonFt = { fg = colors.purple },
+  LazyOperator = { fg = colors.white },
+  LazyReasonKeys = { fg = colors.teal },
+  LazyTaskOutput = { fg = colors.white },
+  LazyCommitIssue = { fg = colors.pink },
+  LazyReasonEvent = { fg = colors.yellow },
+  LazyReasonStart = { fg = colors.white },
+  LazyReasonRuntime = { fg = colors.nord_blue },
+  LazyReasonCmd = { fg = colors.sun },
+  LazyReasonSource = { fg = colors.cyan },
+  LazyReasonImport = { fg = colors.white },
+  LazyProgressDone = { fg = colors.green },
 }
+
+-- merge statusilne & hl_add tables!
+local merge_tb = require("base46").merge_tb
+defaults = merge_tb(defaults, require("base46").load_highlight "statusline")
+
+local hexify_ColorStrs = require("base46").turn_str_to_color
+local user_new_highlights = require("core.utils").load_config().ui.hl_add
+
+return merge_tb(defaults, hexify_ColorStrs(user_new_highlights))

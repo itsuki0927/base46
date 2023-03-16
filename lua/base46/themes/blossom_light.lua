@@ -1,3 +1,6 @@
+-- credits to original theme for existing https://github.com/blossom-theme/blossom.vim
+-- This is just a modified version of it
+
 local M = {}
 
 M.base_30 = {
@@ -65,8 +68,8 @@ M.polish_hl = {
   St_pos_text = { fg = M.base_30.white },
 }
 
-vim.opt.bg = "light"
+M.type = "light"
 
-M = require("base46").override_theme(M, "blossom")
+M = require("base46").override_theme(M, "blossom_light")
 
 return M

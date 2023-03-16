@@ -1,3 +1,6 @@
+-- Thanks to original theme for existing https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json
+-- this is a modified version of it
+
 local M = {}
 
 M.base_30 = {
@@ -55,21 +58,15 @@ M.base_16 = {
 }
 
 M.polish_hl = {
-  ["@field"] = { fg = M.base_30.green1 },
-  ["@parameter"] = { fg = M.base_30.cyan },
+  ["@parameter"] = { fg = M.base_30.blue },
   ["@keyword"] = { fg = M.base_30.blue },
   ["@variable"] = { fg = M.base_30.cyan },
-  ["@field.key"] = { fg = M.base_30.cyan },
-  ["@keywordreturn"] = { fg = M.base_16.base0E },
-  ["@keywordfunction"] = { fg = M.base_30.teal },
-  ["@type.builtin"] = { fg = M.base_30.green1 },
-  ["@constant.builtin"] = { fg = M.base_30.blue },
-
-  Include = { fg = M.base_30.purple },
-  Constant = { fg = M.base_30.cyan },
+  ["@field.key"] = { fg = M.base_30.green1 },
+  ["@keyword.return"] = { fg = M.base_16.base0E },
+  ["@keyword.function"] = { fg = M.base_30.teal },
 }
 
-vim.opt.bg = "dark"
+M.type = "dark"
 
 M = require("base46").override_theme(M, "vscode_dark")
 

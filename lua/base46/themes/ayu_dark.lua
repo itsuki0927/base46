@@ -1,3 +1,6 @@
+-- credits to original theme https://github.com/ayu-theme/ayu-vim (dark)
+-- This is just a modified version of it
+
 local M = {}
 
 M.base_30 = {
@@ -63,6 +66,6 @@ M.polish_hl = {
 
 M = require("base46").override_theme(M, "ayu-dark")
 
-vim.opt.bg = "dark"
+M.type = "dark"
 
 return M
