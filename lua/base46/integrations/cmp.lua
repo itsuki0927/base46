@@ -1,5 +1,5 @@
-local base16 = require("base46").get_theme_tb "base_16"
-local colors = require("base46").get_theme_tb "base_30"
+local base16 = require("base46").get_theme_tb("base_16")
+local colors = require("base46").get_theme_tb("base_30")
 
 local highlights = {
   CmpItemAbbr = { fg = colors.white },
@@ -42,7 +42,14 @@ local item_kinds = {
   CmpItemKindCopilot = { fg = colors.green },
 }
 
-local cmp_ui = require("core.utils").load_config().ui.cmp
+-- local cmp_ui = require("core.utils").load_config().ui.cmp
+local cmp_ui = {
+  icons = true,
+  lspkind_text = true,
+  style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+  border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
+  selected_item_bg = "colored", -- colored / simple
+}
 
 -- custom highlights per style!
 local styles = {
@@ -115,8 +122,11 @@ highlights = vim.tbl_deep_extend("force", highlights, styles[cmp_ui.style] or {}
 highlights = vim.tbl_deep_extend("force", highlights, item_kinds)
 
 if cmp_ui.selected_item_bg == "simple" then
-  highlights.CmpSel =
-    { fg = colors.white, bg = (highlights.CmpPmenu.bg == colors.black2 and colors.grey or colors.one_bg3), bold = true }
+  highlights.CmpSel = {
+    fg = colors.white,
+    bg = (highlights.CmpPmenu.bg == colors.black2 and colors.grey or colors.one_bg3),
+    bold = true,
+  }
 end
 
 return highlights

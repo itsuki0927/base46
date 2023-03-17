@@ -1,9 +1,17 @@
-local colors = require("base46").get_theme_tb "base_30"
+local colors = require("base46").get_theme_tb("base_30")
 local generate_color = require("base46.colors").change_hex_lightness
 local merge_tb = vim.tbl_deep_extend
 
 -- change color values according to statusilne themes
-local statusline_theme = require("core.utils").load_config().ui.statusline.theme
+-- local statusline_theme = require("core.utils").load_config().ui.statusline.theme
+
+local statusline_theme = {
+  theme = "default", -- default/vscode/vscode_colored/minimal
+  -- default/round/block/arrow separators work only for default statusline theme
+  -- round and block will work for minimal theme only
+  separator_style = "default",
+  overriden_modules = nil,
+}
 
 if statusline_theme == "vscode" then
   colors.statusline_bg = generate_color(colors.statusline_bg, 1)
