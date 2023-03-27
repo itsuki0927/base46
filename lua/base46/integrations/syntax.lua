@@ -1,4 +1,4 @@
-local theme = require("base46").get_theme_tb "base_16"
+local theme = require("base46").get_theme_tb("base_16")
 
 local syntax = {
   Boolean = {
@@ -143,4 +143,6 @@ if vim.version().minor == 9 then
   syntax = merge_tb(syntax, semantic_hls)
 end
 
-return merge_tb(syntax, require("base46").load_highlight "treesitter")
+-- P(merge_tb(syntax, require("base46").load_highlight("treesitter")))
+
+return merge_tb(syntax, require("base46").load_highlight("treesitter"))

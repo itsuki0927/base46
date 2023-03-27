@@ -1,4 +1,4 @@
-local colors = require("base46").get_theme_tb "base_30"
+local colors = require("base46").get_theme_tb("base_30")
 
 return {
 
@@ -97,12 +97,15 @@ return {
     bg = colors.black,
   },
 
+  BufferLineDevIcon = {
+    bg = "NONE",
+  },
   BufferLineDevIconDefaultSelected = {
-    bg = "none",
+    bg = "NONE",
   },
 
   BufferLineDevIconDefaultInactive = {
-    bg = "none",
+    bg = "NONE",
   },
 
   BufferLineDuplicate = {
@@ -116,14 +119,5 @@ return {
   BufferLineDuplicateVisible = {
     fg = colors.blue,
     bg = colors.black2,
-  },
-
-  -- custom area
-  BufferLineRightCustomAreaText1 = {
-    fg = colors.white,
-  },
-
-  BufferLineRightCustomAreaText2 = {
-    fg = colors.red,
   },
 }

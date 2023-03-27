@@ -42,6 +42,7 @@ end
 
 M.extend_default_hl = function(highlights)
   local polish_hl = M.get_theme_tb("polish_hl")
+  print(polish_hl)
 
   -- polish themes
   if polish_hl then
@@ -97,7 +98,7 @@ M.saveStr_to_cache = function(filename, tb)
   local bg_opt = "vim.opt.bg='" .. M.get_theme_tb("type") .. "'"
   local defaults_cond = filename == "defaults" and bg_opt or ""
 
-  local cache_path = vim.fn.stdpath("cache") .. "/nvchad/base46/"
+  local cache_path = vim.fn.stdpath("cache") .. "/skcode/base46/"
   local lines = "return string.dump(function()" .. defaults_cond .. M.table_to_str(tb) .. "end, true)"
   local file = io.open(cache_path .. filename, "wb")
 
@@ -120,15 +121,6 @@ M.compile = function()
     if file ~= "statusline" or file ~= "treesitter" then
       local filename = vim.fn.fnamemodify(file, ":r")
       M.saveStr_to_cache(filename, M.load_highlight(filename))
-    end
-  end
-
-  -- look for custom cached highlight files
-  local extended_integrations = config.ui.extended_integrations
-
-  if extended_integrations then
-    for _, integration in ipairs(extended_integrations) do
-      M.saveStr_to_cache(integration, require("base46.extended_integrations." .. integration))
     end
   end
 end

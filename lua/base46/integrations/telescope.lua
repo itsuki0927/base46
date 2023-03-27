@@ -1,6 +1,8 @@
-local colors = require("base46").get_theme_tb "base_30"
+local colors = require("base46").get_theme_tb("base_30")
 
-local telescope_style = require("core.utils").load_config().ui.telescope.style
+-- local telescope_style = require("core.utils").load_config().ui.telescope.style
+
+local telescope_style = "borderless"
 
 local hlgroups = {
 
@@ -21,10 +23,10 @@ local hlgroups = {
     bg = colors.red,
   },
 
-   TelescopeResultsTitle = {
-      fg = colors.darker_black,
-      bg = colors.yellow,
-   },
+  TelescopeResultsTitle = {
+    fg = colors.darker_black,
+    bg = colors.yellow,
+  },
 
   TelescopeSelection = { bg = colors.black2, fg = colors.white },
   TelescopeResultsDiffAdd = { fg = colors.green },

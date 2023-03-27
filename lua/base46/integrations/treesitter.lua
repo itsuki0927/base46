@@ -1,4 +1,4 @@
-local theme = require("base46").get_theme_tb "base_16"
+local theme = require("base46").get_theme_tb("base_16")
 
 return {
   -- `@annotation` is not one of the default capture group, should we keep it
