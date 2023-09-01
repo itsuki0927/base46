@@ -1,6 +1,6 @@
 local colors = require("base46").get_theme_tb("base_30")
 
-return {
+local M = {
 
   BufferLineBackground = {
     fg = colors.light_grey,
@@ -118,12 +118,66 @@ return {
     bg = colors.black2,
   },
 
-  -- custom area
-  BufferLineRightCustomAreaText1 = {
-    fg = colors.white,
+  BufferLineDevIconLua = {
+    bg = colors.black2,
+    fg = colors.blue,
   },
-
-  BufferLineRightCustomAreaText2 = {
-    fg = colors.red,
+  BufferLineDevIconTxt = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconGitIgnore = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconToml = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconMd = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconJson = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconVue = {
+    bg = colors.black2,
+    fg = colors.vibrant_green,
+  },
+  BufferLineDevIconTsx = {
+    bg = colors.black2,
+    fg = colors.teal,
+  },
+  BufferLineDevIconJsx = {
+    bg = colors.black2,
+    fg = colors.teal,
+  },
+  BufferLineDevIconTs = {
+    bg = colors.black2,
+    fg = colors.teal,
+  },
+  BufferLineDevIconJs = {
+    bg = colors.black2,
+    fg = colors.sun,
+  },
+  BufferLineDevIconCss = {
+    bg = colors.black2,
+    fg = colors.blue,
+  },
+  BufferLineDevIconScss = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconLess = {
+    bg = colors.black2,
+    fg = "none",
+  },
+  BufferLineDevIconHtml = {
+    bg = colors.black2,
+    fg = colors.baby_pink,
   },
 }
+
+return M
