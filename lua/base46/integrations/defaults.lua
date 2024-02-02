@@ -71,14 +71,22 @@ return {
   },
 
   FoldColumn = {
-    fg = theme.base0C,
-    bg = theme.base01,
+    fg = theme.base05,
+    bg = theme.base00,
   },
 
   Folded = {
-    fg = theme.base03,
     bg = theme.base01,
   },
+
+  UfoFoldedFg = {
+    fg = theme.base03,
+  },
+  UfoFoldedBg = {
+    bg = theme.base01,
+  },
+  -- UfoCursorFoldedLine = { bg = "#2F3C48", fg = colors.red, bold = true, italic = true },
+  -- UfoFoldedEllipsis = { fg = theme.base08 },
 
   IncSearch = {
     fg = theme.base01,
